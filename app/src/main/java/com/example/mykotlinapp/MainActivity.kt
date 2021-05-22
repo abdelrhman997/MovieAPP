@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this, MyViewModelFactory(MainRepository(retrofitService))).get(MainViewModel::class.java)
-
         binding.recyclerview.adapter = adapter
 
         viewModel.movieList.observe(this, Observer {
